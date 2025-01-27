@@ -3,6 +3,7 @@ import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import "@radix-ui/themes/styles.css";
 import { Theme, Container } from "@radix-ui/themes";
+import Header from "@/components/Header";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrainsMono",
@@ -25,7 +26,11 @@ export default function RootLayout({
       <body className="max-w-screen-lg-xl mx-auto">
         <Theme appearance="dark">
           <Container align="center" className="p-5">
-            {children}
+            <Header />
+
+            <main>
+              {children}
+            </main>
           </Container>
         </Theme>
       </body>
