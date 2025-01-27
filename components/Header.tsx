@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Text } from '@radix-ui/themes'
+import { Button, Flex, Text } from '@radix-ui/themes'
 import Link from 'next/link'
 import Navbar from './Navbar'
 

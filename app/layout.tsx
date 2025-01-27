@@ -4,6 +4,7 @@ import "./globals.css";
 import "@radix-ui/themes/styles.css";
 import { Theme, Container } from "@radix-ui/themes";
 import Header from "@/components/Header";
+import PageTransition from "@/components/PageTransition";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrainsMono",
@@ -23,14 +24,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={jetbrainsMono.variable}>
-      <body className="max-w-screen-lg-xl mx-auto">
+      <body>
         <Theme appearance="dark">
           <Container align="center" className="p-5">
             <Header />
 
-            <main>
+            <PageTransition>
               {children}
-            </main>
+            </PageTransition>
           </Container>
         </Theme>
       </body>
