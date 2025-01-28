@@ -22,8 +22,8 @@ const Navbar = () => {
                     href={link.path}
                     key={index}
                     className={
-                        `${link.path === pathname && "text-cyan-300 border-b-2 border-cyan-300"}
-                        capitalize font-medium hover:text-cyan-300 transition-all`}>
+                        `${link.path === pathname && "text-[var(--highlight)] border-b-2 border-[var(--highlight)]"}
+                        capitalize font-medium hover:text-[var(--highlight)] transition-all`}>
                     {link.name}
                 </Link>
             ))}
