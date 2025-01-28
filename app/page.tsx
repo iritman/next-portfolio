@@ -1,4 +1,6 @@
+import Social from '@/components/Social'
 import { Button, Container, Flex, Text } from '@radix-ui/themes'
+import Link from 'next/link'
 import { FiDownload as DownloadIcon } from 'react-icons/fi'
 
 const HomePage = () => {
@@ -17,12 +19,15 @@ const HomePage = () => {
 
               <div className='flex flex-col xl:flex-row items-center gap-8'>
 
-                <Button color="cyan" radius='full'>
-                  Download CV <DownloadIcon />
+                <Button color="cyan" radius='full' size="3">
+                  <Link href="/">
+                    Download CV
+                  </Link>
+                  <DownloadIcon />
                 </Button>
 
                 <div className='mb-8 xl:mb-0'>
-                  Socials
+                  <Social />
                 </div>
               </div>
             </Flex>
