@@ -1,3 +1,4 @@
+import BrandPhoto from '@/components/BrandPhoto'
 import Social from '@/components/Social'
 import { Button, Container, Flex, Text } from '@radix-ui/themes'
 import Link from 'next/link'
@@ -8,7 +9,7 @@ const HomePage = () => {
     <section className="h-full">
       <Container>
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
-          <div className="text-center xl:text-left">
+          <div className="text-center xl:text-left order-2 xl:order-none">
             <Flex direction="column">
               <Text size="2">Software Engineer</Text>
               <Text size="7">Hello I'm</Text>
@@ -32,7 +33,9 @@ const HomePage = () => {
               </div>
             </Flex>
           </div>
-          <div>photo</div>
+          <div className="mb-8 xl:mb-0 order-1 xl:order-none">
+            <BrandPhoto />
+          </div>
         </div>
       </Container>
     </section>
