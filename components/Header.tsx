@@ -13,7 +13,7 @@ const Header = () => {
                 {/* Desktop nav */}
                 <div className='hidden xl:flex items-center gap-8'>
                     <Navbar />
-                    <Button color="cyan">
+                    <Button color="cyan" radius="full">
                         <Link href="/contact">
                             Hire me
                         </Link>
