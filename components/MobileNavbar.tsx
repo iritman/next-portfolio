@@ -1,14 +1,12 @@
 'use client'
 
-import React, { useState } from 'react'
-import { usePathname } from 'next/navigation'
-import { CiMenuFries as MenuIcon, CiSquareChevRight as CloseIcon } from "react-icons/ci"
-import Link from 'next/link'
-import * as Collapsible from "@radix-ui/react-collapsible";
-import Brand from './Brand'
+import * as Collapsible from "@radix-ui/react-collapsible"
 import { Box, Flex } from '@radix-ui/themes'
-import { AnimatePresence, motion } from 'framer-motion';
-import { links } from './navlinks'
+import { AnimatePresence, motion } from 'framer-motion'
+import React, { useRef, useState } from 'react'
+import { CiSquareChevRight as CloseIcon, CiMenuFries as MenuIcon } from "react-icons/ci"
+import Brand from './Brand'
+import NavLinks from './NavLinks'
 
 const sidebarVariants = {
     open: {
@@ -22,9 +20,25 @@ const sidebarVariants = {
 };
 
 const MobileNavbar = () => {
-    const pathname = usePathname();
-
     const [open, setOpen] = useState(false);
+    const sidebarRef = useRef<HTMLDivElement | null>(null); // تنظیم نوع Ref
+
+    // Handle clicking outside of the sidebar
+    const handleOutsideClick = (e: MouseEvent) => { // تعیین نوع MouseEvent
+        if (sidebarRef.current && !sidebarRef.current.contains(e.target as Node)) {
+            setOpen(false); // Close sidebar if clicked outside
+        }
+    };
+
+    // Adding event listener for clicks outside the sidebar
+    React.useEffect(() => {
+        if (open) {
+            document.addEventListener('click', handleOutsideClick);
+        } else {
+            document.removeEventListener('click', handleOutsideClick);
+        }
+        return () => document.removeEventListener('click', handleOutsideClick);
+    }, [open]);
 
     const handleLinkClick = () => {
         setOpen(false);  // بستن sidebar بعد از کلیک روی لینک
@@ -51,23 +65,14 @@ const MobileNavbar = () => {
                             animate="open"
                             exit="closed"
                             variants={sidebarVariants}
+                            ref={sidebarRef} // Attach ref to the sidebar
                         >
                             <Box className="mt-32 mb-40 text-center text-2xl">
                                 <Brand />
                             </Box>
 
                             <Flex gap="4" direction="column" align="center">
-                                {links.map((link, index) => (
-                                    <Link
-                                        href={link.path}
-                                        key={index}
-                                        onClick={handleLinkClick}
-                                        className={
-                                            `${link.path === pathname && "text-[var(--highlight)] border-b-2 border-[var(--highlight)]"}
-                        capitalize font-medium hover:text-[var(--highlight)] transition-all`}>
-                                        {link.name}
-                                    </Link>
-                                ))}
+                                <NavLinks onClick={handleLinkClick} />
                             </Flex>
                         </motion.div>
                     </Collapsible.Content>
