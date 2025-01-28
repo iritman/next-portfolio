@@ -3,14 +3,7 @@
 import { Flex } from "@radix-ui/themes"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-
-const links = [
-    { name: "home", path: "/" },
-    { name: "services", path: "/services" },
-    { name: "resume", path: "/resume" },
-    { name: "work", path: "/work" },
-    { name: "contact", path: "/contact" },
-]
+import { links } from './navlinks'
 
 const Navbar = () => {
     const pathname = usePathname();

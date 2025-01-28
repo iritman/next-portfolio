@@ -8,14 +8,7 @@ import * as Collapsible from "@radix-ui/react-collapsible";
 import Brand from './Brand'
 import { Box, Flex } from '@radix-ui/themes'
 import { AnimatePresence, motion } from 'framer-motion';
-
-const links = [
-    { name: "home", path: "/" },
-    { name: "services", path: "/services" },
-    { name: "resume", path: "/resume" },
-    { name: "work", path: "/work" },
-    { name: "contact", path: "/contact" },
-]
+import { links } from './navlinks'
 
 const sidebarVariants = {
     open: {
