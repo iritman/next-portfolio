@@ -1,18 +1,14 @@
-import { Button, Flex, Text } from '@radix-ui/themes'
+import { Button, Flex } from '@radix-ui/themes'
 import Link from 'next/link'
+import Brand from './Brand'
+import MobileNavbar from './MobileNavbar'
 import Navbar from './Navbar'
 
 const Header = () => {
     return (
         <header className="py-8 xl:py-12 text-white">
             <Flex justify="between" align="center">
-                <Link href="/">
-                    <Text size="6" weight="bold">
-                        Naiem
-                        <Text size="6" weight="bold" color="cyan">.</Text>
-                        YF
-                    </Text>
-                </Link>
+                <Brand />
 
                 {/* Desktop nav */}
                 <div className='hidden xl:flex items-center gap-8'>
@@ -24,7 +20,7 @@ const Header = () => {
 
                 {/* Mobile nav */}
                 <div className='xl:hidden'>
-                    Mobile nav
+                    <MobileNavbar />
                 </div>
             </Flex>
         </header>
