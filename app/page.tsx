@@ -1,5 +1,6 @@
 import BrandPhoto from '@/components/BrandPhoto'
 import Social from '@/components/Social'
+import Stats from '@/components/Stats'
 import { Button, Container, Flex, Text } from '@radix-ui/themes'
 import Link from 'next/link'
 import { FiDownload as DownloadIcon } from 'react-icons/fi'
@@ -40,6 +41,7 @@ const HomePage = () => {
           </div>
         </div>
       </Container>
+      <Stats />
     </section>
   )
 }
