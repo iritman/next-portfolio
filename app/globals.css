@@ -27,3 +27,13 @@ body {
 * {
   font-family: var(--font-jetbrainsMono), monospace;
 }
+
+@layer base {
+  .text-outline {
+    -webkit-text-stroke: 1px #ffffff;
+  }
+
+  .text-outline-hover {
+    -webkit-text-stroke: 1px var(--highlight);
+  }
+}
