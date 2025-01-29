@@ -41,7 +41,7 @@ const BrandPhoto = () => {
                     <motion.circle
                         cx="200"
                         cy="200"
-                        r="200"
+                        r="203"
                         stroke="#52e1fee5"
                         strokeWidth="4"
                         strokeLinecap="round"

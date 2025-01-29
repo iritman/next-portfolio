@@ -11,10 +11,12 @@ const HomePage = () => {
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
           <div className="text-center xl:text-left order-2 xl:order-none">
             <Flex direction="column">
-              <Text size="2">Software Engineer</Text>
-              <Text size="7">Hello I'm</Text>
-              <Text mb="6" size="9" className='text-[var(--highlight)]'>Naiem YF</Text>
-              <Text mb="9" className='max-w-[25rem]'>
+              <Text size="3">Software Engineer</Text>
+              <Text className='text-4xl'>Hello I'm</Text>
+              <Text className='text-[var(--highlight)] text-7xl' mb="3">
+                Naiem YF
+              </Text>
+              <Text mb="9" size="2" className='max-w-[30rem]'>
                 I excel at crafting elegant digital experiences and I am proficient in various programming languages and technologies
               </Text>
 
