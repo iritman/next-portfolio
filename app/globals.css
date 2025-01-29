@@ -37,3 +37,10 @@ body {
     -webkit-text-stroke: 1px var(--highlight);
   }
 }
+
+.rt-ScrollAreaThumb {
+  position: relative;
+  background-color: var(--highlight) !important;
+  border-radius: inherit;
+  transition: background-color 100ms;
+}
