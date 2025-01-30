@@ -9,7 +9,7 @@ import {
 } from 'react-icons/fa'
 
 const socials = [
-    { icon: <GithubIcon />, path: "" },
+    { icon: <GithubIcon />, path: "https://github.com/iritman" },
     { icon: <LinkedinIcon />, path: "" },
     { icon: <YoutubeIcon />, path: "" },
     { icon: <TwitterIcon />, path: "" },
